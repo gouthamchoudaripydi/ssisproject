@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="loaddata"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{51170837-2163-472E-9360-1CD1231CFAEC}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{19FB589C-FFF1-4C43-BA18-68952456B9B9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -83,7 +83,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[customer]</property>
+                      name="OpenRowset">[Person].[Password]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -105,7 +105,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -126,8 +126,8 @@
                   <connections>
                     <connection
                       refId="Package\first group of tables\load data\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[server1hyd.loaddb]"
-                      connectionManagerRefId="Package.ConnectionManagers[server1hyd.loaddb]"
+                      connectionManagerID="{033F9AA2-E70E-40A3-BC54-695E95058609}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[server1hyd.AdventureWorks2022]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -151,63 +151,9 @@
                           cachedName="ModifiedDate"
                           externalMetadataColumnId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
                           lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
-                        <inputColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
-                          cachedDataType="i4"
-                          cachedName="CustomerID"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
-                        <inputColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PersonID]"
-                          cachedDataType="i4"
-                          cachedName="PersonID"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonID]" />
-                        <inputColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StoreID]"
-                          cachedDataType="i4"
-                          cachedName="StoreID"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StoreID]" />
-                        <inputColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
-                          cachedDataType="i4"
-                          cachedName="TerritoryID"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
-                        <inputColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="AccountNumber"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                          dataType="i4"
-                          name="CustomerID" />
-                        <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
-                          dataType="i4"
-                          name="PersonID" />
-                        <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreID]"
-                          dataType="i4"
-                          name="StoreID" />
-                        <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
-                          dataType="i4"
-                          name="TerritoryID" />
-                        <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="AccountNumber" />
                         <externalMetadataColumn
                           refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
                           dataType="guid"
@@ -216,6 +162,22 @@
                           refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
                           dataType="dbTimeStamp"
                           name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                          dataType="i4"
+                          name="BusinessEntityID" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PasswordHash]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          name="PasswordHash" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PasswordSalt]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="PasswordSalt" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -269,7 +231,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *from [Sales].[Customer]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *from person.person</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -324,51 +286,109 @@
                           name="ModifiedDate"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                          name="CustomerID"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                          name="BusinessEntityID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonID]"
-                          dataType="i4"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonID]"
-                          name="PersonID"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonType]"
+                          length="2"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]"
+                          name="PersonType"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StoreID]"
-                          dataType="i4"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]"
+                          dataType="bool"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StoreID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StoreID]"
-                          name="StoreID"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]"
+                          name="NameStyle"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
-                          dataType="i4"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
-                          name="TerritoryID"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                          length="8"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                          name="Title"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNumber]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          length="50"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          name="FirstName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                          length="50"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                          name="MiddleName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          length="50"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                          name="LastName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suffix]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
                           length="10"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNumber]"
-                          name="AccountNumber"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suffix]"
+                          name="Suffix"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailPromotion]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailPromotion]"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailPromotion]"
+                          name="EmailPromotion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AdditionalContactInfo]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AdditionalContactInfo]"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AdditionalContactInfo]"
+                          name="AdditionalContactInfo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Demographics]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Demographics]"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Demographics]"
+                          name="Demographics"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -382,27 +402,55 @@
                           dataType="dbTimeStamp"
                           name="ModifiedDate" />
                         <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
                           dataType="i4"
-                          name="CustomerID" />
+                          name="BusinessEntityID" />
                         <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
-                          dataType="i4"
-                          name="PersonID" />
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonType]"
+                          dataType="wstr"
+                          length="2"
+                          name="PersonType" />
                         <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StoreID]"
-                          dataType="i4"
-                          name="StoreID" />
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
+                          dataType="bool"
+                          name="NameStyle" />
                         <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
-                          dataType="i4"
-                          name="TerritoryID" />
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                          dataType="wstr"
+                          length="8"
+                          name="Title" />
                         <externalMetadataColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                          dataType="wstr"
+                          length="50"
+                          name="MiddleName" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LastName" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
+                          dataType="wstr"
                           length="10"
-                          name="AccountNumber" />
+                          name="Suffix" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailPromotion]"
+                          dataType="i4"
+                          name="EmailPromotion" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AdditionalContactInfo]"
+                          dataType="nText"
+                          name="AdditionalContactInfo" />
+                        <externalMetadataColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Demographics]"
+                          dataType="nText"
+                          name="Demographics" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -411,32 +459,66 @@
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
                           dataType="i4"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                          name="CustomerID" />
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                          name="BusinessEntityID" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonID]"
-                          dataType="i4"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonID]"
-                          name="PersonID" />
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonType]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonType]"
+                          name="PersonType" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StoreID]"
-                          dataType="i4"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StoreID]"
-                          name="StoreID" />
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameStyle]"
+                          dataType="bool"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameStyle]"
+                          name="NameStyle" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
-                          dataType="i4"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
-                          name="TerritoryID" />
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                          dataType="wstr"
+                          length="8"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                          name="Title" />
                         <outputColumn
-                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          name="FirstName" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                          name="MiddleName" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          name="LastName" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suffix]"
+                          dataType="wstr"
                           length="10"
-                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
-                          name="AccountNumber" />
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suffix]"
+                          name="Suffix" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmailPromotion]"
+                          dataType="i4"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmailPromotion]"
+                          name="EmailPromotion" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AdditionalContactInfo]"
+                          dataType="nText"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AdditionalContactInfo]"
+                          name="AdditionalContactInfo" />
+                        <outputColumn
+                          refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Demographics]"
+                          dataType="nText"
+                          lineageId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Demographics]"
+                          name="Demographics" />
                         <outputColumn
                           refId="Package\first group of tables\load data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rowguid]"
                           dataType="guid"
@@ -2319,7 +2401,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="trunc personpay"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2337,7 +2419,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="trunc product"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
