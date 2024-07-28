@@ -1,0 +1,3 @@
+SourceSchema,SourceTable,SourceColumns,DestinationSchema,DestinationTable,DestinationColumns
+person,password,[BusinessEntityID],[PasswordHash],[PasswordSalt],[rowguid],[ModifiedDate],dbo,password,[BusinessEntityID],[PasswordHash],[PasswordSalt],[rowguid],[ModifiedDate]
+sales,customer,[CustomerID],[PersonID],[StoreID],[TerritoryID],[AccountNumber],[rowguid],[ModifiedDate],dbo,customer,[CustomerID],[PersonID],[StoreID],[TerritoryID],[AccountNumber],[rowguid],[ModifiedDate]

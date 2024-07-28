@@ -1,0 +1,95 @@
+    string datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+    try
+    {
+
+        //Declare Variables
+        string DestinationFolder = Dts.Variables["User::DestinationFolder"].Value.ToString();
+        string FileDelimiter = Dts.Variables["User::FileDelimiter"].Value.ToString();
+        string FileExtension = Dts.Variables["User::FileExtension"].Value.ToString();
+        string Db = Dts.Variables["User::Db"].Value.ToString();
+
+        //USE ADO.NET Connection from SSIS Package to get data from table
+        SqlConnection myADONETConnection = new SqlConnection();
+        myADONETConnection = (SqlConnection)(Dts.Connections["DBConn"].AcquireConnection(Dts.Transaction) as SqlConnection);
+
+
+        //Read list of Tables with Schema from Database
+        string query = "SELECT sourceschema AS SchemaName,sourcetable AS TableName FROM ["+Db+"].[dbo].[control_table]";
+
+        //MessageBox.Show(query.ToString());
+        SqlCommand cmd = new SqlCommand(query, myADONETConnection);
+        DataTable dt = new DataTable();
+        dt.Load(cmd.ExecuteReader());
+
+        //Loop through datatable(dt) that has schema and table names
+        foreach (DataRow dt_row in dt.Rows)
+        {
+            string SchemaName = "";
+            string TableName = "";
+            object[] array = dt_row.ItemArray;
+            SchemaName = array[0].ToString();
+            TableName = array[1].ToString();
+
+            string FileFullPath = DestinationFolder + "\\" + TableName + "_" + datetime + FileExtension;
+
+            //Get the data for a table into data table 
+            string data_query = "Select * From [" + SchemaName + "].[" + TableName + "]";
+            SqlCommand data_cmd = new SqlCommand(data_query, myADONETConnection);
+            DataTable d_table = new DataTable();
+            d_table.Load(data_cmd.ExecuteReader());
+
+            StreamWriter sw = null;
+            sw = new StreamWriter(FileFullPath, false);
+
+            // Write the Header Row to File
+            int ColumnCount = d_table.Columns.Count;
+            for (int ic = 0; ic < ColumnCount; ic++)
+            {
+                sw.Write(d_table.Columns[ic]);
+                if (ic < ColumnCount - 1)
+                {
+                    sw.Write(FileDelimiter);
+                }
+            }
+            sw.Write(sw.NewLine);
+
+            // Write All Rows to the File
+            foreach (DataRow dr in d_table.Rows)
+            {
+                for (int ir = 0; ir < ColumnCount; ir++)
+                {
+                    if (!Convert.IsDBNull(dr[ir]))
+                    {
+                        sw.Write(dr[ir].ToString());
+                    }
+                    if (ir < ColumnCount - 1)
+                    {
+                        sw.Write(FileDelimiter);
+                    }
+                }
+                sw.Write(sw.NewLine);
+
+            }
+
+            sw.Close();
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+    }
+
+    catch (Exception exception)
+    {
+
+        // Create Log File for Errors
+        using (StreamWriter sw = File.CreateText(Dts.Variables["User::LogFolder"].Value.ToString() + "\\" +
+            "ErrorLog_" + datetime + ".log"))
+        {
+            sw.WriteLine(exception.ToString());
+            Dts.TaskResult = (int)ScriptResults.Failure;
+
+
+        }
+    }
+
+}
